@@ -1,0 +1,14 @@
+citHeader("To cite 'ooc' in publications use:")
+
+citEntry(entry = "Manual",
+  title        = "Ordered Optimal Classification",
+  author       = personList(as.person("Christopher Hare"),
+			as.person("Keith T. Poole")),
+  year         = "2017",
+  note	       = "R package version 0.1",
+
+  textVersion  =
+  paste("Hare, Christopher and Keith T. Poole (2017).",
+        "Ordered Optimal Classification: Ideal Point Estimator.",
+        "R package version 0.1. URL http://christopherdhare.com")
+)
