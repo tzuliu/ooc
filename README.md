@@ -21,4 +21,4 @@ This is a repository for the project of "Ordered Optimal Classification"
 ## Papers:
 
 * You can download the paper from the folder "Paper."
-* Please DO NOT cite the unpublished papers without authors' consents.
+* Please **DO NOT** cite the unpublished papers without authors' consents.
