@@ -2,10 +2,10 @@ Package: ooc
 Type: Package
 Title: Ordered Optimal Classification
 Version: 0.1
-Date: 2017-10-13
+Date: 2018-02-24
 Author:  Christopher Hare <cdhare@ucdavis.edu> and Keith T. Poole <ktpoole@uga.edu>
 Maintainer: Christopher Hare <cdhare@ucdavis.edu>
 Description: Fits version of Poole's Optimal Classification model for ordered choice data.
 License: GPL-2
-Depends: stats, oc, pscl, MCMCpack, aspace, hitandrun, KRLS
+Depends: stats, oc, pscl, MCMCpack, aspace, hitandrun, KRLS, e1071, MASS
 URL: http://christopherdhare.com

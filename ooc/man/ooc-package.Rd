@@ -8,7 +8,7 @@
 Package: \tab ooc\cr
 Type: \tab Package\cr
 Version: \tab 0.1\cr
-Date: \tab 2017-10-13\cr
+Date: \tab 2018-02-24\cr
 License: \tab GPL-2 \cr
 }}
 \author{Christopher Hare and Keith T. Poole}

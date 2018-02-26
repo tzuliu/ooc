@@ -236,13 +236,14 @@ oocObject
 # WRITE ORDERED OPTIMAL CLASSIFICATION FUNCTION
 #
 ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
-	iter=25, ols=FALSE){
+	iter=25, nv.method="svm.reg", cost=1){
  
 	set.seed(1985)
 
 	#nresp <- nrow(votemat)
 	nvotes <- ncol(votemat)
 	ndim <- dims
+	costvalue <- cost
 
 	#   !!! "votemat" is the original matrix with ordinal choices !!!
 	#   !!! "votemat.even.binary" is the matrix with binary choices recoded to be as evenly-balanced as possible !!!
@@ -598,7 +599,8 @@ ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
 
 	cat("\t\tGetting respondent coordinates...\n")
 
-	#  ROLL CALL LOOP (CALCULATE NORMAL VECTORS VIA OLS OR KRLS)
+	#  ROLL CALL LOOP (CALCULATE NORMAL VECTORS VIA oprobit,
+	#  svm.reg, svm.class, OR krls)
 
 	XMATTEMP <- XMAT
 	ZVEC_regress <- rep(0,ndim*nvotes)
@@ -608,7 +610,31 @@ ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
 
 		choices <- votemat[,j]
 
-			if (ols==FALSE){
+
+			if (nv.method=="oprobit"){
+			res <- polr(factor(choices) ~ XMATTEMP)
+			denominator <- sqrt(sum(res$coef^2))
+			for (q in 1:ndim){
+			ZVEC_regress[j,q] <- res$coef[q] / denominator
+			}}
+
+			if (nv.method=="svm.reg"){
+			res <- svm(choices ~ XMATTEMP, kernel="linear", cost=costvalue, scale=FALSE)
+			coefs <- t(res$coefs) %*% res$SV
+			denominator <- sqrt(sum(coefs^2))
+			for (q in 1:ndim){
+			ZVEC_regress[j,q] <- coefs[q] / denominator
+			}}
+
+			if (nv.method=="svm.class"){
+			res <- svm(factor(binary.balanced(choices)) ~ XMATTEMP, kernel="linear", cost=costvalue, scale=FALSE)
+			coefs <- t(res$coefs) %*% res$SV
+			denominator <- sqrt(sum(coefs^2))
+			for (q in 1:ndim){
+			ZVEC_regress[j,q] <- coefs[q] / denominator
+			}}
+
+			if (nv.method=="krls"){
 			temp.complete <- complete.cases(XMATTEMP & choices) 
 			X <- XMATTEMP[temp.complete,]
 			y <- choices[temp.complete]
@@ -619,12 +645,7 @@ ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
 			ZVEC_regress[j,q] <- res$avgderivatives[q] / denominator
 			}}
 
-			if (ols==TRUE){
-			res <- lm(choices ~ XMATTEMP)
-			denominator <- sqrt(sum(res$coef[-1]^2))
-			for (q in 1:ndim){
-			ZVEC_regress[j,q] <- res$coef[(q+1)] / denominator
-			}}
+
 
 	}
 

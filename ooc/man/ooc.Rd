@@ -5,7 +5,7 @@
 \description{Performs Ordered Optimal Classification, an extension of Poole's (2000) nonparametric unfolding procedure for the analysis of ordinal choice data (e.g., ``Strongly Agree,'' ``Somewhat Agree,'' ``Somewhat Disagree,'' ``Strongly Disagree''). }
 
 \usage{ooc <- function(votemat, dims=2, minvotes=10, lop=0.0.001, 
-	polarity=c(1,1), iter=25, ols=FALSE)}
+	polarity=c(1,1), iter=25, nv.method="svm.reg", cost=1)}
 
 \arguments{
   \item{votemat}{A matrix of ordinal choice data, must be consecutive integers starting with 1. Binary choice should be coded so that 1 = Support, 2 = Oppose. Missing data must be coded as \code{NA}.}
@@ -14,7 +14,8 @@
   \item{lop}{A proportion between 0 and 1, the cut-off used for excluding lopsided votes}
   \item{polarity}{A vector specifying the row number of the respondent(s) constrained to have a positive (i.e., right-wing or conservative) score on each dimension}
   \item{iter}{Number of iterations of the modified Optimal Classification algorithm}
-  \item{ols}{Logical flag indicating whether OLS should be used to compute normal vectors at each step of the iteration. If \code{FALSE}, kernel regularized least squares (KRLS) is used (see Hainmueller and Hazlett, 2014).}
+  \item{nv.nethod}{The method used to compute normal vectors at each step of the iteration. Choices include: "oprobit" (Ordered probit regression), "svm.reg" (SVM: regression), "svm.class" (SVM: classification), and "krls" (Kernel regularized least squares)}
+  \item{cost}{The cost parameter for SVM (ignored unless "svm.reg" or "svm.class" is used to compute normal vectors).}
 }
 
 \value{
@@ -30,22 +31,21 @@ A list with the following elements:
 }
 
 \references{Poole, Keith T. 2000. ``Nonparametric Unfolding of Binary Choice Data.'' \emph{Political Analysis} 8(3): 211--237.
+
 Armstrong, David A., Ryan Bakker, Royce Carroll, Christopher Hare, Keith T. Poole, and Howard Rosenthal. 2014. \emph{Analyzing Spatial Models of Choice and Judgment with R}. Boca Raton, FL: CRC Press.
+
 Hainmueller, Jens and Hazlett, Chad. 2013. ``Kernel Regularized Least Squares: Reducing Misspecification Bias with a Flexible and Interpretable Machine Learning Approach.'' \emph{Political Analysis} 22(2): 143--168.}
 
 \author{Christopher Hare and Keith T. Poole}
 
 \examples{
-
 \dontshow{
 data(ANES2004)
-issuescales <- ANES2004[,1:14]
-}
-
+issuescales <- ANES2004[,1:14]}
 \dontrun{
 data(ANES2004)
 issuescales <- ANES2004[,1:14]
-result <- ooc(issuescales, dims=2, minvotes=10, lop=0.001, polarity=c(1,1), iter=25, ols=FALSE)
+result <- ooc(issuescales, dims=2, minvotes=10, lop=0.001, polarity=c(1,1), iter=25, nv.method="svm.reg", cost=1)
 presvote <- as.numeric(ANES2004[,15])
 presvote[presvote==2] <- 0
 x <- result$respondents[,5]
@@ -57,4 +57,4 @@ points(x[presvote==0], y[presvote==0], pch="K", col="blue", font=2, cex=1.1)
 
 }
 
-\keyword{ideal point estimation, Optimal Classification, nonparametric methods}
+\keyword{ideal point estimation, Optimal Classification, nonparametric statistics}
