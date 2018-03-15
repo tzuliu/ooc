@@ -1,13 +1,18 @@
-# OOC(Ordered Optimal Classification)
-This is a repository for the project of "Ordered Optimal Classification"
+# OOC (Ordered Optimal Classification)
+This is a repository for the project "Ordered Optimal Classification"
 
 ---
 
-## Install the development version from GitHub:
+## To install the "ooc" Package in R, first download and load "devtools" as below:
+` install.packages("devtools", dependencies=TRUE)`
+` library(devtools)`
+
+## Then install and load the development version from GitHub:
 ` devtools::install_github('tzuliu/ooc/ooc')`
+` library(ooc)`
 
 ---
-## Prerequisite:
+## Prerequisites:
 
 ### Mac Users
 
@@ -21,4 +26,3 @@ This is a repository for the project of "Ordered Optimal Classification"
 ## Papers:
 
 * You can download the paper from the folder "Paper."
-* Please **DO NOT** cite the unpublished papers without authors' consents.
