@@ -4,12 +4,16 @@ This is a repository for the project "Ordered Optimal Classification"
 ---
 
 ## To install the "ooc" Package in R, first download and load "devtools" as below:
-` install.packages("devtools", dependencies=TRUE)`
-` library(devtools)`
+````
+install.packages("devtools", dependencies=TRUE)
+library(devtools)
+````
 
 ## Then install and load the development version from GitHub:
-` devtools::install_github('tzuliu/ooc/ooc')`
-` library(ooc)`
+````
+devtools::install_github('tzuliu/ooc/ooc')
+library(ooc)
+````
 
 ---
 ## Prerequisites:
