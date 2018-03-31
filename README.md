@@ -29,4 +29,4 @@ library(ooc)
 ---
 ## Papers:
 
-For the final version of the paper "What Ordered Optimal Classification Reveals about Ideological Structure Cleavages and Polarization" and the related/replication codes, please refer to [this repository]("https://github.com/tzuliu/What-Ordered-Optimal-Classification-Reveals-about-Ideological-Structure-Cleavages-and-Polarization")
+For the final version of the paper "What Ordered Optimal Classification Reveals about Ideological Structure Cleavages and Polarization" and the related/replication codes, please refer to [this repository](https://github.com/tzuliu/What-Ordered-Optimal-Classification-Reveals-about-Ideological-Structure-Cleavages-and-Polarization)
