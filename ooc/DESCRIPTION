@@ -8,4 +8,5 @@ Maintainer: Christopher Hare <cdhare@ucdavis.edu>
 Description: Fits version of Poole's Optimal Classification model for ordered choice data.
 License: GPL-2
 Depends: stats, oc, pscl, MCMCpack, aspace, hitandrun, KRLS, e1071, MASS
+Suggests: roxygen2, testthat
 URL: http://christopherdhare.com
