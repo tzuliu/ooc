@@ -13,8 +13,3 @@ install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 script:
   - Rscript -e 'devtools::check("ooc")'
-
-notifications:
-  email:
-    on_success: change
-    on_failure: change
