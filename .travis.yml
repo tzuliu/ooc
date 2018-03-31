@@ -1,7 +1,10 @@
 language: r
 cache: packages
 
+before_install:
+ - cd subdirectory
+ 
 install:
-  - Rscript -e 'install.packages("devtools","roxygen2","testthat");devtools::install_deps("ooc")'
+  - Rscript -e 'install.packages("devtools");devtools::install_deps("ooc")'
 script:
   - Rscript -e 'devtools::check("ooc")'
