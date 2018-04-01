@@ -1,5 +1,6 @@
 # OOC: Ordered Optimal Classification 
 [![Build Status](https://travis-ci.org/tzuliu/ooc.svg?branch=master)](https://travis-ci.org/tzuliu/ooc)
+
 This is a repository for the project "OOC: Ordered Optimal Classification"
 
 ---
