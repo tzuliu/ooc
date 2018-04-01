@@ -10,8 +10,11 @@ install:
 script:
   - Rscript -e 'devtools::check("ooc")'
   
+r_packages:
+  - covr
+
 r_github_packages:
-  - r-lib/covr
- 
+  - codecov/example-r
+
 after_success:
-  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'library(covr);codecov()'
