@@ -11,7 +11,7 @@ install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 
 r_github_packages:
-  - codecov/example-r
+  - tzuliu/ooc
 
 script:
   - Rscript -e 'devtools::check("ooc")'
