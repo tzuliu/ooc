@@ -4,7 +4,13 @@ language: r
 
 cache: packages
 
+r_packages:
+  - covr
+ 
 install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 script:
   - Rscript -e 'devtools::check("ooc")'
+ 
+after_success:
+  - Rscript -e 'library(covr); codecov()'
