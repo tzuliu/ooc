@@ -17,4 +17,4 @@ script:
   - Rscript -e 'devtools::check("ooc")'
  
 after_success:
-  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'library(covr);codecov()'
