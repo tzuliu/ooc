@@ -7,9 +7,6 @@ cache: packages
 install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 
-script:
-  - Rscript -e 'devtools::check("ooc")'
-  
 r_packages:
   - covr
 
