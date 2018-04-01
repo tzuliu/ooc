@@ -1,7 +1,5 @@
 # OOC: Ordered Optimal Classification 
-[![Travis Build](https://img.shields.io/travis/USER/REPO.svg)](https://travis-ci.org/tzuliu/ooc)
-[![Codecov](https://img.shields.io/codecov/c/github/codecov/example-python.svg)](https://codecov.io)
-
+[![Build Status](https://travis-ci.org/tzuliu/ooc.svg?branch=master)](https://travis-ci.org/tzuliu/ooc)
 
 This is a repository for the project "OOC: Ordered Optimal Classification"
 
