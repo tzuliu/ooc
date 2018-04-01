@@ -9,6 +9,8 @@ r_packages:
  
 install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
+  - Rscript -e "devtools::install_github('jimhester/covr')"
+
 script:
   - Rscript -e 'devtools::check("ooc")'
  
