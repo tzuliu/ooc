@@ -8,7 +8,6 @@ install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat","covr"));devtools::install_deps("ooc")'
 
 script:
-  - Rscript -e setwd("/home/travis/build/tzuliu/")
   - Rscript -e 'devtools::check("ooc")'
   
 
@@ -19,4 +18,5 @@ r_github_packages:
   - r-lib/covr
 
 after_success:
+  - Rscript -e setwd("/home/travis/build/tzuliu/")
   - Rscript -e 'covr::codecov()'
