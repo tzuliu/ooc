@@ -9,17 +9,11 @@ os:
 
 install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
-
-env:
-  global:
-    # Allow build to continue even if a suggested package cannot be installed.
-    - _R_CHECK_FORCE_SUGGESTS_=false
  
 #r_packages:
 #  - covr
 
 script:
-  - Rscript -e 'setwd("/home/travis/build/tzuliu/")'
   - Rscript -e 'devtools::check("ooc")'
   
 r_github_packages:
