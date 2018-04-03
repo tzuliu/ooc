@@ -18,5 +18,5 @@ r_github_packages:
   - r-lib/covr
 
 after_success:
-  setwd("/home/travis/build/tzuliu/")
+  - Rscript -e 'setwd("/home/travis/build/tzuliu/")'
   - Rscript -e 'covr::codecov()'
