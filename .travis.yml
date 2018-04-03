@@ -5,7 +5,7 @@ before_install:
 
 script:
   - gfortran -fprofile-arcs -ftest-coverage -O0 ooc.f90
-  - ./src
+  - ./src/ooc
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
