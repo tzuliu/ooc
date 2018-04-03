@@ -4,6 +4,9 @@ language: r
 
 cache: packages
 
+os:
+  - osx
+
 install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 
@@ -12,15 +15,17 @@ env:
     # Allow build to continue even if a suggested package cannot be installed.
     - _R_CHECK_FORCE_SUGGESTS_=false
  
-r_packages:
-  - covr
+#r_packages:
+#  - covr
 
 script:
   - Rscript -e 'setwd("/home/travis/build/tzuliu/")'
   - Rscript -e 'devtools::check("ooc")'
   
 r_github_packages:
-  - r-lib/covr
+  - jimhester/covr
 
 after_success:
-  - Rscript -e 'covr::codecov()'
+  after_success:
+  # Only check test coverage for R = release and OS = linux.
+  - test ${TRAVIS_R_VERSION_STRING} == "release" && test ${TRAVIS_OS_NAME} == "osx" && Rscript -e 'covr::codecov()'
