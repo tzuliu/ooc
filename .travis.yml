@@ -25,4 +25,5 @@ r_github_packages:
 #  - ehrlinger/randomForestSRC
 
 after_success:
+  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
   - Rscript -e 'covr::coveralls()'
