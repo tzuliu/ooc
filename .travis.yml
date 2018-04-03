@@ -1,43 +1,29 @@
-language: c
-sudo: required
-before_install:
-  - sudo apt-get install gfortran
+sudo: false
 
-script:
-  - gfortran -fprofile-arcs -ftest-coverage -O0 ooc.f90
-  - ./src/ooc
+language: r
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+cache: packages
 
-#After this line are codes for R
-
-#sudo: false
-
-#language: r
-
-#cache: packages
-
-#os:
-#  - osx
+os:
+  - osx
 
 #install:
 #  - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 #  - Rscript -e "devtools::install_github('jimhester/covr')"
  
-#r_packages:
-#  - covr
+r_packages:
+  - covr
 
 #script:
 #  - Rscript -e 'devtools::check("ooc")'
   
-#r_github_packages:
-#  - codecov/example-r
+r_github_packages:
+  - codecov/example-r
 #  - hadley/dplyr
 #  - hadley/tidyr
 #  - hadley/ggplot2
 #  - ehrlinger/randomForestSRC
 
-#after_success:
+after_success:
 #  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
-#  - Rscript -e 'covr::coveralls()'
+  - Rscript -e 'covr::coveralls()'
