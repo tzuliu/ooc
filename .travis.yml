@@ -4,8 +4,8 @@ language: r
 
 cache: packages
 
-os:
-  - osx
+#os:
+#  - osx
 
 #install:
 #  - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
