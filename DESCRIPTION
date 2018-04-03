@@ -9,5 +9,5 @@ Description: Fits version of Poole's Optimal Classification model for ordered ch
 License: GPL-2
 Depends: stats, oc, pscl, MCMCpack, aspace, hitandrun, KRLS, e1071, MASS
 Suggests: roxygen2, testthat, covr
-Remotes: r-lib/covr
+Remotes: codecov/example-r
 URL: http://christopherdhare.com
