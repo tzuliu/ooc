@@ -13,7 +13,7 @@ library(devtools)
 
 ## Then install and load the development version from GitHub:
 ````
-devtools::install_github('tzuliu/ooc/ooc')
+devtools::install_github('tzuliu/ooc')
 library(ooc)
 ````
 
