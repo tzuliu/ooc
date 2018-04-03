@@ -1,29 +1,60 @@
-sudo: false
+# Travis doesn't have a fortran build config, so we'll use c as a base and
+# create our own environment
+language: c
+sudo: required
 
-language: r
-
-cache: packages
-
-os:
-  - osx
-
+env:
+    global:
+        - FC=gfortran-4.8
+        - OMPI_FC=${FC}
 install:
-  - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
+    - sudo apt-add-repository --yes ppa:ubuntu-toolchain-r/test
+    - sudo apt-get update
+    - sudo apt-get install gcc-4.8 gfortran-4.8 libgomp1 openmpi-bin libopenmpi-dev
+
+    # Use the current stable version (2.1.0)
+    # See http://sourceforge.net/p/pfunit/mailman/message/31811969
+    - git clone --depth 1 --branch pfunit_2.1.0 git://git.code.sf.net/p/pfunit/code pfunit-code
+    - make -C pfunit-code MPI=yes OPENMP=yes
+    - make install -C pfunit-code INSTALL_DIR=../pfunit
+
+    - pip install --user codecov
+
+script: 
+    - make check PFUNIT=pfunit
+
+after_success:
+    - find .
+    - codecov --gcov-exec=gcov-4.8
+
+#After this line are codes for R
+
+#sudo: false
+
+#language: r
+
+#cache: packages
+
+#os:
+#  - osx
+
+#install:
+#  - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 #  - Rscript -e "devtools::install_github('jimhester/covr')"
  
-r_packages:
-  - covr
+#r_packages:
+#  - covr
 
-script:
-  - Rscript -e 'devtools::check("ooc")'
+#script:
+#  - Rscript -e 'devtools::check("ooc")'
   
-r_github_packages:
-  - codecov/example-r
+#r_github_packages:
+#  - codecov/example-r
 #  - hadley/dplyr
 #  - hadley/tidyr
 #  - hadley/ggplot2
 #  - ehrlinger/randomForestSRC
 
-after_success:
-  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
-  - Rscript -e 'covr::coveralls()'
+#after_success:
+#  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
+#  - Rscript -e 'covr::coveralls()'
