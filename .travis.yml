@@ -11,14 +11,14 @@ install:
   - Rscript -e 'install.packages(c("devtools","roxygen2","testthat"));devtools::install_deps("ooc")'
 #  - Rscript -e "devtools::install_github('jimhester/covr')"
  
-#r_packages:
-#  - covr
+r_packages:
+  - covr
 
 script:
   - Rscript -e 'devtools::check("ooc")'
   
 r_github_packages:
-  - jimhester/covr
+  - codecov/example-r
 #  - hadley/dplyr
 #  - hadley/tidyr
 #  - hadley/ggplot2
