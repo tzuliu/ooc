@@ -18,8 +18,10 @@ script:
   
 r_github_packages:
   - jimhester/covr
+#  - hadley/dplyr
+#  - hadley/tidyr
+#  - hadley/ggplot2
+#  - ehrlinger/randomForestSRC
 
 after_success:
-  after_success:
-  # Only check test coverage for R = release and OS = linux.
-  - test ${TRAVIS_OS_NAME} == "osx" && Rscript -e 'covr::codecov()'
+  - Rscript -e 'covr::coveralls()'
