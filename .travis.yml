@@ -28,4 +28,4 @@ r_github_packages:
 after_success:
   after_success:
   # Only check test coverage for R = release and OS = linux.
-  - test ${TRAVIS_R_VERSION_STRING} == "release" && test ${TRAVIS_OS_NAME} == "osx" && Rscript -e 'covr::codecov()'
+  - test ${TRAVIS_OS_NAME} == "osx" && Rscript -e 'covr::codecov()'
