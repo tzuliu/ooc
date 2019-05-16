@@ -25,7 +25,7 @@ library(ooc)
 ### Mac Users
 
 * Make sure you have already installed ***gfortran*** (reference can be reached [here](https://cran.r-project.org/bin/macosx/tools/))
-** Through **Homebrew**---````brew install gcc````
+    ** Through **Homebrew**---````brew install gcc````
 * Make sure you have already installed ***Xcode Developer Tools***
 
 ### Windows Users
