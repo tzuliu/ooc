@@ -27,7 +27,7 @@ library(ooc)
 * Make sure you have already installed ***gfortran*** (reference can be reached [here](https://cran.r-project.org/bin/macosx/tools/))
    - Trouble Shooting for Warning Message in R regarding ***gfortran*** not found:
       - Try **Homebrew** to install ***gfortran*** through ````brew install gcc```` and ````brew link gcc````
-      - Try to open the file ***Makeconf*** in the folder ````/Library/Frameworks/R.framework/Resources/etc````, and then change **FLIBS** to ````FLIBS = -L/usr/local/Cellar/gcc/***YOUR GCC VERSION***/lib/gcc/***6 or 7 or 9 (depends on the version)*** (reference can be reached [here](https://octaviancorlade.github.io/compile-rcpparmadillo-glibfortran-high-sierra/))
+      - Try to open the file ***Makeconf*** in the folder ````/Library/Frameworks/R.framework/Resources/etc````, and then change **FLIBS** to ````FLIBS = -L/usr/local/Cellar/gcc/***YOUR GCC VERSION***/lib/gcc/***6 or 7 or 9 (depends on the version)***```` (reference can be reached [here](https://octaviancorlade.github.io/compile-rcpparmadillo-glibfortran-high-sierra/))
 * Make sure you have already installed ***Xcode Developer Tools***
 
 ### Windows Users
