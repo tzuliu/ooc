@@ -25,7 +25,8 @@ library(ooc)
 ### Mac Users
 
 * Make sure you have already installed ***gfortran*** (reference can be reached [here](https://cran.r-project.org/bin/macosx/tools/))
-   - Trouble Shooting:
+   - Trouble Shooting for Warning Message in R regarding ***gfortran***:
+      - Try 
 * Make sure you have already installed ***Xcode Developer Tools***
 
 ### Windows Users
