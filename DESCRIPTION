@@ -3,7 +3,7 @@ Type: Package
 Title: Ordered Optimal Classification
 Version: 0.1
 Date: 2018-02-24
-Author:  Christopher Hare <cdhare@ucdavis.edu> and Keith T. Poole <ktpoole@uga.edu>
+Author:  Christopher Hare <cdhare@ucdavis.edu>, Tzu-Ping Liu <tpliu@ucdavis.edu>, and Keith T. Poole <ktpoole@uga.edu>
 Maintainer: Christopher Hare <cdhare@ucdavis.edu>
 Description: Fits version of Poole's Optimal Classification model for ordered choice data.
 License: GPL-2
