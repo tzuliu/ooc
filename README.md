@@ -3,7 +3,7 @@
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![Github All Releases](https://img.shields.io/github/downloads/tzuliu/ooc/total.svg)]()
 [![GitHub Release](https://github-basic-badges.herokuapp.com/release/tzuliu/ooc.svg)]()
-[codecov](https://codecov.io/github/tzuliu/ooc/branch/master/graphs/badge.svg)](https://codecov.io/gh/tzuliu/ooc) 
+[![codecov](https://codecov.io/github/tzuliu/ooc/branch/master/graphs/badge.svg)](https://codecov.io/gh/tzuliu/ooc) 
 <!--[![Github all releases](https://img.shields.io/github/downloads/tzuliu/ooc/total.svg)](https://GitHub.com/tzuliu/ooc/releases/)-->
 <!--[![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/tzuliu/ooc/total.svg)]()-->
 
