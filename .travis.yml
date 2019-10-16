@@ -28,4 +28,5 @@ r_github_packages:
 
 after_success:
 #  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
+  - bash <(curl -s https://codecov.io/bash)
   - Rscript -e 'covr::coveralls()'
