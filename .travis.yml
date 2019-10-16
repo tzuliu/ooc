@@ -34,4 +34,4 @@ after_success:
 #  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
   #- bash <(curl -s https://codecov.io/bash)
   #- Rscript -e 'covr::coveralls()'
-  - Rscript -e 'library(covr);codecov()'
+  - Rscript -e 'covr::codecov()'
