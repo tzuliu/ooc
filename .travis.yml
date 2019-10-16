@@ -23,7 +23,6 @@ r_packages:
   
 r_github_packages:
   - codecov/example-r
-  - devtools
 #  - hadley/dplyr
 #  - hadley/tidyr
 #  - hadley/ggplot2
@@ -32,5 +31,5 @@ r_github_packages:
 after_success:
 #  - Rscript -e 'setwd("/Users/travis/build/tzuliu/")'
   #- bash <(curl -s https://codecov.io/bash)
-  #- Rscript -e 'covr::coveralls()'
+  - Rscript -e 'covr::coveralls()'
   - Rscript -e 'covr::codecov()'
