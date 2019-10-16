@@ -3,6 +3,7 @@
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 <!--[![Github All Releases](https://img.shields.io/github/downloads/tzuliu/ooc/total.svg)]()-->
 <!--[![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/tzuliu/ooc/total.svg)]()-->
+[![Github all releases](https://img.shields.io/github/downloads/tzuliu/ooc/total.svg)](https://GitHub.com/tzuliu/ooc/releases/)
 
 
 This is a repository for the project "OOC: Ordered Optimal Classification"
