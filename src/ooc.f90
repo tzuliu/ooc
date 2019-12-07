@@ -98,16 +98,16 @@
 !    (X'X)
 !
       IF(IPRINT.EQ.1) IPRINT=1  !hack to get rid of warnings
-      DO 38 K=1,NS
-      DO 39 L=1,NS
-      SUM=0.0
-      DO 40 I=1,NRCALL
-      SUM=SUM+ZVEC(I,K)*ZVEC(I,L)
-  40  CONTINUE
-      VCOV(K,L)=SUM
-      VCOV2(K,L)=SUM
-  39  CONTINUE
-  38  CONTINUE
+      DO K=1,NS
+        DO L=1,NS
+          SUM=0.0
+          DO I=1,NRCALL
+            SUM=SUM+ZVEC(I,K)*ZVEC(I,L)
+          END DO
+          VCOV(K,L)=SUM
+          VCOV2(K,L)=SUM
+        END DO
+      END DO
 !
 !  EIGENVECTOR-EIGENVALUE DECOMPOSITION OF NORMAL VECTOR MATRIX
 !
