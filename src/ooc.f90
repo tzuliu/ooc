@@ -98,16 +98,16 @@
 !    (X'X)
 !
       IF(IPRINT.EQ.1) IPRINT=1  !hack to get rid of warnings
-      DO K=1,NS
-        DO L=1,NS
-          SUM=0.0
-          DO I=1,NRCALL
-            SUM=SUM+ZVEC(I,K)*ZVEC(I,L)
-          END DO
-          VCOV(K,L)=SUM
-          VCOV2(K,L)=SUM
-        END DO
-      END DO
+      DO 38 K=1,NS
+      DO 39 L=1,NS
+      SUM=0.0
+      DO 40 I=1,NRCALL
+      SUM=SUM+ZVEC(I,K)*ZVEC(I,L)
+  40  CONTINUE
+      VCOV(K,L)=SUM
+      VCOV2(K,L)=SUM
+  39  CONTINUE
+  38  CONTINUE
 !
 !  EIGENVECTOR-EIGENVALUE DECOMPOSITION OF NORMAL VECTOR MATRIX
 !
@@ -119,17 +119,19 @@
 !
 !  (X'X)-1
 !
-      DO 83 I=1,NS
-      DO 83 K=1,NS
-      SUM=0.0
-      DO 84 J=1,NS
+DO I=1,NS
+  DO K=1,NS
+    SUM=0.0
+    DO J=1,NS
 !      IF(ABS(WVEC(NS+1-J)).GT..0001)THEN
 !          SUM=SUM+VVV(K,NS+1-J)*(1.0/WVEC(NS+1-J))*VVV(I,NS+1-J)
       IF(ABS(WVEC(J)).GT..0001)THEN
           SUM=SUM+VVV(K,J)*(1.0/WVEC(J))*VVV(I,J)
       ENDIF
-  84  CONTINUE
-  83  UL(I,K)=SUM
+    END DO
+    UL(I,K)=SUM
+  END DO
+END DO
 !
 !
 !  MATRIX INVERSION CHECK  (X'X)-1(X'X) = I
