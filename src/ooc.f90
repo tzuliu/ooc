@@ -119,47 +119,42 @@
 !
 !  (X'X)-1
 !
-DO I=1,NS
-  DO K=1,NS
-    SUM=0.0
-    DO J=1,NS
+      DO 83 I=1,NS
+      DO 83 K=1,NS
+      SUM=0.0
+      DO 84 J=1,NS
 !      IF(ABS(WVEC(NS+1-J)).GT..0001)THEN
 !          SUM=SUM+VVV(K,NS+1-J)*(1.0/WVEC(NS+1-J))*VVV(I,NS+1-J)
       IF(ABS(WVEC(J)).GT..0001)THEN
           SUM=SUM+VVV(K,J)*(1.0/WVEC(J))*VVV(I,J)
       ENDIF
-    END DO
-    UL(I,K)=SUM
-  END DO
-END DO
+  84  CONTINUE
+  83  UL(I,K)=SUM
 !
 !
 !  MATRIX INVERSION CHECK  (X'X)-1(X'X) = I
 !
-ASUM=0.0
-DO I=1,NS
-  DO J=1,NS
-    SUM=0.0
-    DO K=1,NS
+      ASUM=0.0
+      DO 933 I=1,NS
+      DO 933 J=1,NS
+      SUM=0.0
+      DO 944 K=1,NS
       SUM=SUM+UL(J,K)*VCOV(K,I)
-    END DO
-    IF(I.EQ.J)ASUM=ASUM+ABS(1.0-SUM)
-    IF(I.NE.J)ASUM=ASUM+ABS(SUM)
-  END DO
-END DO
+  944 CONTINUE
+      IF(I.EQ.J)ASUM=ASUM+ABS(1.0-SUM)
+      IF(I.NE.J)ASUM=ASUM+ABS(SUM)
+  933 CONTINUE
 !      IF(ASUM.GT..01.AND.IPRINT.EQ.1)WRITE(23,1091)ASUM
 !
 !  (X'X)-1*X'
 !
-DO I=1,NRCALL
-  DO J=1,NS
-    SUM=0.0
-    DO JJ=1,NS
+      DO 85 I=1,NRCALL
+      DO 85 J=1,NS
+      SUM=0.0
+      DO 86 JJ=1,NS
       SUM=SUM+UL(J,JJ)*ZVEC(I,JJ)
-    END DO
-    BB(J,I)=SUM
-  END DO
-END DO
+  86  CONTINUE
+  85  BB(J,I)=SUM
 !
       DEALLOCATE(VVV)
       DEALLOCATE(VVV2)
@@ -766,14 +761,14 @@ END DO
 !  IMPOSE RANGE CONSTRAINTS ON ALPHA VECTOR -- ROOT2 IS THE LOWER BOUND
 !                                              ROOT1 IS THE UPPER BOUND
 !
-KK=0
-DO I=1,ITOT
-  IF(XALL(I).GT.ROOT2.AND.XALL(I).LT.ROOT1)THEN
-     KK=KK+1
-     YALL(KK)=XALL(I)
-     LALL(KK)=KALL(I)
-  ENDIF
-END DO
+      KK=0
+      DO 363 I=1,ITOT
+      IF(XALL(I).GT.ROOT2.AND.XALL(I).LT.ROOT1)THEN
+         KK=KK+1
+         YALL(KK)=XALL(I)
+         LALL(KK)=KALL(I)
+      ENDIF
+  363 CONTINUE
 !
       WSSY=0.0
       IF(KK.GT.0)THEN
@@ -1163,7 +1158,7 @@ END DO
 ! SELECT A CENTRAL ELEMENT OF THE
 ! ARRAY AND SAVE IT IN LOCATION T
 !
-      IJ = idint(I+(J-I)*R)
+      IJ = I+(J-I)*R
       T = A(IJ)
       IT = IR(IJ)
 !
