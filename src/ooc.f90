@@ -151,13 +151,15 @@ END DO
 !
 !  (X'X)-1*X'
 !
-      DO 85 I=1,NRCALL
-      DO 85 J=1,NS
-      SUM=0.0
-      DO 86 JJ=1,NS
+DO I=1,NRCALL
+  DO J=1,NS
+    SUM=0.0
+    DO JJ=1,NS
       SUM=SUM+UL(J,JJ)*ZVEC(I,JJ)
-  86  CONTINUE
-  85  BB(J,I)=SUM
+    END DO
+    BB(J,I)=SUM
+  END DO
+END DO
 !
       DEALLOCATE(VVV)
       DEALLOCATE(VVV2)
