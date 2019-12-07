@@ -1,4 +1,5 @@
 !
+!  RCMD SHLIB legislator_cuttingplane_routine.f90 -lRblas -lRlapack
 !
 ! *********************************************************************
 !   SUBROUTINE KPLEGIS -- PERFORMS THE LEGISLATIVE PROCEDURE
