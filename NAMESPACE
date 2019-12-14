@@ -1,6 +1,6 @@
 exportPattern("^[[:alpha:]]+")
 useDynLib(ooc, .registration=TRUE)
-import(stats, oc, pscl, MCMCpack, aspace, hitandrun, KRLS)
+import(stats, pscl, MCMCpack, aspace, hitandrun, KRLS)
 importFrom("grDevices", "dev.new")
 importFrom("graphics", "par", "plot", "points", "segments")
 importFrom("stats", "na.omit", "quantile", "runif")
