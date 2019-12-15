@@ -521,8 +521,10 @@ ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
 	lcut <- 6
 	for (jx in 1:nrcall){
 	for (i in 1:np){
-		
-	sum <- XMAT[i,]%*%ZVEC[1,]
+	sum=0.0	
+	for (k in 1:ns){
+		sum <- sum+XMAT[i,k]*ZVEC[jx,k]
+	}
 
 	#  SAVE PROJECTION VECTORS -- RESPONDENT BY ROLL CALL MATRIX
 
