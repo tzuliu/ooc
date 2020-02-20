@@ -610,9 +610,12 @@ ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
 
 		choices <- votemat[,j]
 
-
 			if (nv.method=="oprobit"){
-			res <- polr(factor(choices) ~ XMATTEMP)
+				if (length(table(choices))==2){
+					res <- glm(factor(choices) ~ XMATTEMP, family = binomial(link = "probit"))
+					res$coef <- res$coef[-1]}
+				if (length(table(choices))>=3){
+					res <- polr(factor(choices) ~ XMATTEMP)}
 			denominator <- sqrt(sum(res$coef^2))
 			for (q in 1:ndim){
 			ZVEC_regress[j,q] <- res$coef[q] / denominator
