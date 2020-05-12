@@ -32,7 +32,7 @@ library(ooc)
 
 * Make sure you have already installed ***Xcode Developer Tools*** (through App Store)
 * Make sure you have installed xcode command line tools through `xcode-select --install` on **Terminal**
-* (For Xcode higher than 10.X and R higher than 4.X) Make sure to create symlink for all the headers file into this folder through `sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/* /usr/local/include/`
+* (For Xcode higher than 10.X and R higher than 4.X) Make sure to create symlink for all the headers file into this folder, `/usr/local/include/`, through `sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/* /usr/local/include/`
 * Make sure you have downloaded **gfortran-8.2** from [here](https://mac.r-project.org/tools/) and installed on the your laptop
 * Make sure you add **/usr/local/gfortran/bin** to your **PATH** through `export PATH=$PATH:/usr/local/gfortran/bin`
 * Make sure you have installed both `pscl` and `OC` in R (due to `OC` is the dependency and has been archived by R-CRAN)
