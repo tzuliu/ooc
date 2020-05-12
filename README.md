@@ -36,7 +36,7 @@ library(ooc)
 * Make sure you have downloaded **gfortran-8.2** from [here](https://mac.r-project.org/tools/) and installed on the your laptop
 * Make sure you add **/usr/local/gfortran/bin** to your **PATH** through `export PATH=$PATH:/usr/local/gfortran/bin`
 * Make sure you have installed both `pscl` and `OC` in R (due to `OC` is the dependency and has been archived by R-CRAN)
-* Reference: [for creating symlink for headers file](https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15/58349403#58349403), [for downloading gfortran-8.2 and adding PATH](https://mac.r-project.org/tools/)
+* Reference: [for creating symlink for headers files](https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15/58349403#58349403), [for downloading gfortran-8.2 and adding PATH](https://mac.r-project.org/tools/)
 
 <!-- * Make sure you have already installed ***gfortran*** (reference can be reached [here](https://cran.r-project.org/bin/macosx/tools/))
    - Trouble Shooting for Warning Message in R regarding ***gfortran*** not found:
