@@ -43,6 +43,7 @@ library(ooc)
       - Try **Homebrew** to install ***gfortran*** through ````brew install gcc```` and ````brew link gcc````
       - Try to open the file ***Makeconf*** in the folder ````/Library/Frameworks/R.framework/Resources/etc````, and then change **FLIBS** to ````FLIBS = -L/usr/local/Cellar/gcc/"YOUR GCC VERSION"/lib/gcc/"6, 7, 8, or 9 (depends on the version)"```` (reference can be reached [here](https://octaviancorlade.github.io/compile-rcpparmadillo-glibfortran-high-sierra/)) --!>
 
+
 ### Windows Users
 
 * Make sure you have already installed ***RTools***
