@@ -31,18 +31,18 @@ library(ooc)
 ### Mac Users
 
 * Make sure you have already installed ***Xcode Developer Tools*** (through App Store)
-   - Make sure you have installed xcode command line tools through `xcode-select --install` on **Terminal**
-   - (For Xcode higher than 10.X and R higher than 4.X) Make sure to create symlink for all the headers file into this folder through `sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/* /usr/local/include/`
-   - Make sure you have downloaded **gfortran-8.2** from [here](https://mac.r-project.org/tools/) and installed on the your laptop
-   - Make sure you add **/usr/local/gfortran/bin** to your **PATH** through `export PATH=$PATH:/usr/local/gfortran/bin`
-   - Make sure you have installed both `pscl` and `OC` in R (due to `OC` is the dependency and has been archived by R-CRAN)
-   - Reference: [for creating symlink for headers file](https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15/58349403#58349403), [for downloading gfortran-8.2 and adding PATH](https://mac.r-project.org/tools/)
+* Make sure you have installed xcode command line tools through `xcode-select --install` on **Terminal**
+* (For Xcode higher than 10.X and R higher than 4.X) Make sure to create symlink for all the headers file into this folder through `sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/* /usr/local/include/`
+* Make sure you have downloaded **gfortran-8.2** from [here](https://mac.r-project.org/tools/) and installed on the your laptop
+* Make sure you add **/usr/local/gfortran/bin** to your **PATH** through `export PATH=$PATH:/usr/local/gfortran/bin`
+* Make sure you have installed both `pscl` and `OC` in R (due to `OC` is the dependency and has been archived by R-CRAN)
+* Reference: [for creating symlink for headers file](https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15/58349403#58349403), [for downloading gfortran-8.2 and adding PATH](https://mac.r-project.org/tools/)
 
 <!-- * Make sure you have already installed ***gfortran*** (reference can be reached [here](https://cran.r-project.org/bin/macosx/tools/))
    - Trouble Shooting for Warning Message in R regarding ***gfortran*** not found:
       - Try **Homebrew** to install ***gfortran*** through ````brew install gcc```` and ````brew link gcc````
-      - Try to open the file ***Makeconf*** in the folder ````/Library/Frameworks/R.framework/Resources/etc````, and then change **FLIBS** to ````FLIBS = -L/usr/local/Cellar/gcc/"YOUR GCC VERSION"/lib/gcc/"6, 7, 8, or 9 (depends on the version)"```` (reference can be reached [here](https://octaviancorlade.github.io/compile-rcpparmadillo-glibfortran-high-sierra/)) --!>
-
+      - Try to open the file ***Makeconf*** in the folder ````/Library/Frameworks/R.framework/Resources/etc````, and then change **FLIBS** to ````FLIBS = -L/usr/local/Cellar/gcc/"YOUR GCC VERSION"/lib/gcc/"6, 7, 8, or 9 (depends on the version)"```` (reference can be reached [here](https://octaviancorlade.github.io/compile-rcpparmadillo-glibfortran-high-sierra/)) -->
+---
 
 ### Windows Users
 
