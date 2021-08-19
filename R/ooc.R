@@ -182,8 +182,9 @@ M[is.na(M)] <- 9
 return(M)
 }
 #
+# ===================================
 #
-# WRITE  EASY ORDERED OPTIMAL CLASSIFICATION FUNCTION (binaryeven)
+# WRITE EASY ORDERED OPTIMAL CLASSIFICATION FUNCTION (binaryeven)
 #
 ooc.binaryeven <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1)){
  
@@ -230,6 +231,12 @@ oocObject
 
 
 }
+#
+# ===================================
+#
+# FUNCTION TO CONVERT RADIANS TO DEGREES
+#
+rad2deg <- function(rad) {(rad * 180) / (pi)}
 #
 # ===================================
 #
@@ -844,7 +851,7 @@ ooc <- function(votemat, dims=2, minvotes=10, lop=0.001, polarity=c(1,1),
 	theta <- NULL
 	for (j in 1:nvotes){
 	a <- c(unique.NV1[j], unique.NV2[j])
-	theta[j] <- acos_d(sum(a*b) / (sqrt(sum(a*a))*sqrt(sum(b*b))))
+	theta[j] <- rad2deg(acos(sum(a*b) / (sqrt(sum(a*a))*sqrt(sum(b*b)))))
 	if (a[2] < 0) theta[j] <- -1 * theta[j]
 	}
 	
