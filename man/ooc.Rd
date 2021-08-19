@@ -2,7 +2,7 @@
 \alias{ooc}
 \title{Ordered Optimal Classification}
 
-\description{Performs Ordered Optimal Classification, an extension of Poole's (2000) nonparametric unfolding procedure for the analysis of ordinal choice data (e.g., ``Strongly Agree,'' ``Somewhat Agree,'' ``Somewhat Disagree,'' ``Strongly Disagree''). }
+\description{Performs Ordered Optimal Classification, an extension of Poole's (2000) nonparametric unfolding procedure for the analysis of ordinal choice data (e.g., ``Strongly Agree,'' ``Somewhat Agree,'' ``Somewhat Disagree,'' ``Strongly Disagree'') as detailed in Hare, Liu, and Lupton (2018).}
 
 \usage{ooc <- function(votemat, dims=2, minvotes=10, lop=0.0.001, 
 	polarity=c(1,1), iter=25, nv.method="svm.reg", cost=1)}
@@ -32,11 +32,13 @@ A list with the following elements:
 
 \references{Poole, Keith T. 2000. ``Nonparametric Unfolding of Binary Choice Data.'' \emph{Political Analysis} 8(3): 211--237.
 
-Armstrong, David A., Ryan Bakker, Royce Carroll, Christopher Hare, Keith T. Poole, and Howard Rosenthal. 2014. \emph{Analyzing Spatial Models of Choice and Judgment with R}. Boca Raton, FL: CRC Press.
+Hare, Christopher, Tzu-Ping Liu, and Robert N. Lupton. 2018. ``What Ordered Optimal Classification Reveals about Ideological Structure, Cleavages, and Polarization in the American Mass Public.'' \emph{Public Choice} 176: 57--78.
+
+Armstrong, David A., Ryan Bakker, Royce Carroll, Christopher Hare, Keith T. Poole, and Howard Rosenthal. 2020. \emph{Analyzing Spatial Models of Choice and Judgment}, second edition. Boca Raton, FL: CRC Press.
 
 Hainmueller, Jens and Hazlett, Chad. 2013. ``Kernel Regularized Least Squares: Reducing Misspecification Bias with a Flexible and Interpretable Machine Learning Approach.'' \emph{Political Analysis} 22(2): 143--168.}
 
-\author{Christopher Hare and Keith T. Poole}
+\author{Christopher Hare, Tzu-Ping Liu, and Keith T. Poole}
 
 \examples{
 \dontshow{
