@@ -5,8 +5,8 @@
    this.year <- substr(mydate, x[1], x[1] + attr(x, "match.length") - 1)
 
    packageStartupMessage("\n## Ordered Optimal Classification: Ideal Point Estimation Package")
-   packageStartupMessage("## Christopher Hare and Keith T. Poole")
-
+   packageStartupMessage("## Christopher Hare, Tzu-Ping Liu, and Keith T. Poole")
+   packageStartupMessage("## https://github.com/tzuliu/ooc")
 }
 
 .onUnload <- function(libpath) {
